@@ -1,0 +1,18 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 60
+      arrivalRate: 5
+      rampTo: 10
+      name: "Warm up the API"
+  plugins:
+    ensure: {}
+  ensure:
+    maxErrorRate: 1
+    p99: 4
+
+scenarios:
+  - name: "Retrieve data from health endpoint"
+    flow:
+      - get:
+          url: "/health"
