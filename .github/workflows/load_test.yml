@@ -20,6 +20,10 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Run the program
+        run: npm run start
+
       - name: Execute load tests
         uses: artilleryio/action-cli@v1
         with:
