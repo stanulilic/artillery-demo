@@ -22,7 +22,9 @@ jobs:
         run: npm install
 
       - name: Run the program
-        run: npm run start
+        run: |
+          npm run start
+          npx wait-on http://localhost:3000
 
       - name: Execute load tests
         uses: artilleryio/action-cli@v1
